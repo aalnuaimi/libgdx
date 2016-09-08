@@ -143,6 +143,9 @@ public class LwjglTestStarter extends JFrame {
 	 * @param argv command line arguments
 	 */
 	public static void main (String[] argv) throws Exception {
+		System.out.println("About: Florida Institute of Technology,");
+		System.out.println("Intro to Software Engineering - CSE2410 - Fall 2016");
+		System.out.println("Andrew Greco, Jessica Nguy, Francis Savino, Ahmed Alnuaimi");
 		if (argv.length > 0) {
 			if (runTest(argv[0])) {
 				return;
