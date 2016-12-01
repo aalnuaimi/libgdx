@@ -83,10 +83,13 @@ public class ResolutionFileResolver implements FileHandleResolver {
 
 	@Override
 	public FileHandle resolve (String fileName) {
-		Resolution bestResolution = choose(descriptors);
+		//Resolution bestResolution = choose(descriptors);
 		FileHandle originalHandle = new FileHandle(fileName);
-		FileHandle handle = baseResolver.resolve(resolve(originalHandle, bestResolution.folder));
-		if (!handle.exists()) handle = baseResolver.resolve(fileName);
+		//FileHandle handle = baseResolver.resolve(resolve(originalHandle, bestResolution.folder));
+		//if (!handle.exists()) handle = baseResolver.resolve(fileName);
+		
+		FileHandle handle = baseResolver.resolve(fileName);
+		
 		return handle;
 	}
 
@@ -100,8 +103,10 @@ public class ResolutionFileResolver implements FileHandleResolver {
 	}
 
 	static public Resolution choose (Resolution... descriptors) {
-		int w = Gdx.graphics.getWidth(), h = Gdx.graphics.getHeight();
+		//int w = Gdx.graphics.getWidth(), h = Gdx.graphics.getHeight();
 
+		int w = (int) Gdx.graphics.getWidth(), h = Gdx.graphics.getHeight();
+		
 		// Prefer the shortest side.
 		Resolution best = descriptors[0];
 		if (w < h) {
